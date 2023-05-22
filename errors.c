@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 12:51:20 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/21 18:18:09 by ertiz            ###   ########.fr       */
+/*   Updated: 2023/05/22 18:56:15 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-//check if there is error on syntax or there are letters in the input string (not valid)
+//check if there is error on syntax or 
+//there are letters in the input string (not valid)
 
 int	error_syntax(char *str_nbr)
 {
@@ -83,7 +84,7 @@ int	error_repetation(t_stack *a, int nbr)
 	while (a)
 	{
 		if (a->nbr == nbr)
-		return (1);
+			return (1);
 		a = a->next;
 	}
 	return (0);

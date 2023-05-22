@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 10:24:51 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/21 10:31:48 by ertiz            ###   ########.fr       */
+/*   Updated: 2023/05/22 19:05:07 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@ static void	swap(t_stack **head)
 	(*head)->prev->next = (*head)->next;
 	if ((*head)->next)
 		(*head)->next->prev = (*head)->prev;
-	(*head)->next =(*head)->prev;
+	(*head)->next = (*head)->prev;
 	(*head)->prev = NULL;
 }
 
 void	sa(t_stack **a, bool check)
 {
 	swap(a);
-	if(!check)
+	if (!check)
 		write(1, "sa\n", 3);
 }
 
 void	sb(t_stack **b, bool check)
 {
 	swap(b);
-	if(!check)
+	if (!check)
 		write(1, "sb\n", 3);
 }
 
@@ -43,6 +43,6 @@ void	ss(t_stack **a, t_stack **b, bool check)
 {
 	swap(a);
 	swap(b);
-	if(!check)
+	if (!check)
 		write(1, "ss\n", 3);
 }
