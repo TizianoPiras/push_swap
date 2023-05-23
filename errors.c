@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 12:51:20 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/22 18:56:15 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/05/23 14:28:35 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@ void	free_matrix(char **av)
 {
 	int	i;
 
-	i = -1;
-	if (*av == NULL || av == NULL)
-		return ;
+	i = 0;
 	while (av[i])
-		free(av[i++]);
-	free(av - 1);
+	{
+		free(av[i]);
+		i++;
+	}
+	free(av);
 }
 
 //free all elements of the stack
@@ -45,21 +46,19 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-//check if there is error on syntax or 
-//there are letters in the input string (not valid)
+//check if there is error on syntax or there are letters in the input string (not valid)
 
 int	error_syntax(char *str_nbr)
 {
-	if (!(*str_nbr == '+' || *str_nbr == '-'
-			|| (*str_nbr >= '0' && *str_nbr <= '9')))
-		return (1);
-	if ((*str_nbr == '+' || *str_nbr == '-')
-		&& !(str_nbr[1] >= '0' && str_nbr[1] <= '9'))
-		return (1);
-	while (*++str_nbr)
+	int	i;
+
+	i = 0;
+	while (str_nbr[i])
 	{
-		if (!(*str_nbr >= '0' && *str_nbr <= '9'))
+		if (str_nbr[i] != '-' &&
+			(str_nbr[i] < '0' || str_nbr[i] > '9'))
 			return (1);
+		i++;
 	}
 	return (0);
 }

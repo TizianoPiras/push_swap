@@ -6,7 +6,7 @@
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:02:46 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/21 15:33:36 by ertiz            ###   ########.fr       */
+/*   Updated: 2023/05/23 14:09:53 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_stack
 
 t_stack	*find_last_node(t_stack *head);
 void	append_node(t_stack **stack, int nbr);
-void	stack_init(t_stack **a, char **av, bool flag_ac2);
+void	stack_init(t_stack **a, char **av, int flag_ac2);
 
 //push moves functions (push.c)
 //static void push(t_stack **dest, t_stack **src);

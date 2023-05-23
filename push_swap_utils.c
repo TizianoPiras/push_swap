@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 11:23:27 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/22 19:04:06 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/05/21 14:57:20 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	node_evaluation(t_stack *a, t_stack *b)
 {
 	int	len_a;
 	int	len_b;
-
+	
 	len_a = stack_len(a);
 	len_b = stack_len(b);
 	while (b)

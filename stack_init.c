@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:48:04 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/22 19:00:14 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/05/23 14:17:48 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long	ft_atol(const char *str)
+static long ft_atol(const char *str)
 {
-	int		ng;
+    int	    ng;
 	long	res;
 
 	res = 0;
@@ -48,8 +48,8 @@ t_stack	*find_last_node(t_stack *head)
 
 void	append_node(t_stack **stack, int nbr)
 {
-	t_stack	*node;
-	t_stack	*last;
+	t_stack *node;
+	t_stack *last;
 
 	if (stack == NULL)
 		return ;
@@ -73,24 +73,29 @@ void	append_node(t_stack **stack, int nbr)
 
 //Stack creator, flag useful -> if true the av is in the HEAP to free.
 
-void	stack_init(t_stack **a, char **av, bool flag_ac2)
+void	stack_init(t_stack **a, char **av, int flag_ac2)
 {
-	long	nbr;
-	int		i;
+	long    nbr;
+	int     i;
 
 	i = 0;
 	while (av[i])
 	{
-		if (error_syntax(av[i]))
-			error_free(a, av, flag_ac2);
+		if (error_syntax(av[i]) == 1)
+		{
+			write(2, "Error: please insert only number, better with \" \"\n", 50);
+			if (flag_ac2 == 2)
+				free_matrix(av);
+			exit(2);
+		}
 		nbr = ft_atol(av[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			error_free(a, av, flag_ac2);
 		if (error_repetation(*a, (int)nbr))
 			error_free(a, av, flag_ac2);
-		append_node(a, (int)nbr);
-		++i;
+		append_node(a, nbr);
+		i++;
 	}
-	if (flag_ac2)
+	if (flag_ac2 == 2)
 		free_matrix(av);
 }

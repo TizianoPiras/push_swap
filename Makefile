@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+         #
+#    By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/21 14:30:26 by ertiz             #+#    #+#              #
-#    Updated: 2023/05/22 18:28:51 by tpiras           ###   ########.fr        #
+#    Updated: 2023/05/23 13:26:55 by ertiz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ $(OUTPUT): $(OBJ)
 		$(LIBC) $(OUTPUT) $^
 
 %.o:%.c
-		@$(CC) -Wall -Wextra -Werror -g -O2 -c $< -o $@
+		@$(CC) -Wall -Wextra -g -O2 -c $< -o $@
 		@echo "\033[36mDAJE!\033[0m"
 		
 clean:

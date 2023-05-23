@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 12:31:18 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/22 18:56:47 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/05/21 15:59:33 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,13 @@ void	set_current_position(t_stack *stack)
 	}
 }
 
-static void	set_target(t_stack *a, t_stack *b)
+
+static void set_target(t_stack *a, t_stack *b)
 {
 	t_stack	*current_a;
 	t_stack	*target_node;
 	long	best_index;
-
+	
 	while (b)
 	{
 		best_index = LONG_MAX;
