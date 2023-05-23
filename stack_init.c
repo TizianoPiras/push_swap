@@ -6,7 +6,7 @@
 /*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:48:04 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/23 15:33:40 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/05/23 16:03:31 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	append_node(t_stack **stack, int nbr)
 
 	if (stack == NULL)
 		return ;
-	node = malloc(sizeof(t_stack));
+	node = (t_stack *) malloc (sizeof(t_stack));
 	if (node == NULL)
 		return ;
 	node->next = NULL;
