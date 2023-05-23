@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   short_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 10:59:14 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/21 15:13:30 by ertiz            ###   ########.fr       */
+/*   Updated: 2023/05/22 19:05:15 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ bool	is_sorted(t_stack *stack)
 
 static t_stack	*is_highest(t_stack *stack)
 {
-	int     high;
-	t_stack *highest;
+	int		high;
+	t_stack	*highest;
 
 	if (stack == NULL)
 		return (NULL);
@@ -73,8 +73,8 @@ t_stack	*is_smallest(t_stack *stack)
 
 void	sorty(t_stack **a)
 {
-	t_stack *highest;
-	
+	t_stack	*highest;
+
 	highest = is_highest(*a);
 	if (*a == highest)
 		ra(a, false);

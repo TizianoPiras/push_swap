@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 10:18:34 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/21 18:34:24 by ertiz            ###   ########.fr       */
+/*   Updated: 2023/05/22 19:03:23 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	rotate(t_stack **stack)
 {
 	t_stack	*last;
+
 	if (*stack == NULL || stack == NULL)
 		return ;
 	last = find_last_node(*stack);
@@ -27,14 +28,14 @@ static void	rotate(t_stack **stack)
 
 void	ra(t_stack **a, bool check)
 {
-	rotate(a);
+	rotate (a);
 	if (!check)
 		write(1, "ra\n", 3);
 }
 
 void	rb(t_stack **b, bool check)
 {
-	rotate(b);
+	rotate (b);
 	if (!check)
 		write(1, "rb\n", 3);
 }

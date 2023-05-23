@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:48:04 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/23 14:17:48 by ertiz            ###   ########.fr       */
+/*   Updated: 2023/05/23 15:33:40 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long ft_atol(const char *str)
+static long	ft_atol(const char *str)
 {
-    int	    ng;
+	int		ng;
 	long	res;
 
 	res = 0;
@@ -48,8 +48,8 @@ t_stack	*find_last_node(t_stack *head)
 
 void	append_node(t_stack **stack, int nbr)
 {
-	t_stack *node;
-	t_stack *last;
+	t_stack	*node;
+	t_stack	*last;
 
 	if (stack == NULL)
 		return ;
@@ -75,8 +75,8 @@ void	append_node(t_stack **stack, int nbr)
 
 void	stack_init(t_stack **a, char **av, int flag_ac2)
 {
-	long    nbr;
-	int     i;
+	long	nbr;
+	int		i;
 
 	i = 0;
 	while (av[i])

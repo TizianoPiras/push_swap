@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 10:02:57 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/21 10:24:11 by ertiz            ###   ########.fr       */
+/*   Updated: 2023/05/22 19:05:49 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void push(t_stack **dest, t_stack **src)
+static void	push(t_stack **dest, t_stack **src)
 {
-	t_stack *to_push;
+	t_stack	*to_push;
+
 	if (*src == NULL)
 		return ;
 	to_push = *src;
@@ -38,13 +39,13 @@ static void push(t_stack **dest, t_stack **src)
 void	pa(t_stack **a, t_stack **b, bool check)
 {
 	push(a, b);
-	if(!check)
+	if (!check)
 		write(1, "pa\n", 3);
 }
 
 void	pb(t_stack **a, t_stack **b, bool check)
 {
 	push(a, b);
-	if(!check)
+	if (!check)
 		write(1, "pb\n", 3);
 }

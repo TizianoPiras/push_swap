@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:27:32 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/23 14:20:46 by ertiz            ###   ########.fr       */
+/*   Updated: 2023/05/23 15:31:48 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		matrix = ft_split(av[1], ' ');
-		printf("%s matix", matrix[0]);
 		stack_init(&a, matrix, 2);
 	}
 	if (ac > 2)

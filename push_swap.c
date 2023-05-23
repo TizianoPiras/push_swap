@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 11:48:31 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/21 12:28:58 by ertiz            ###   ########.fr       */
+/*   Updated: 2023/05/22 19:09:11 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ static void	move_nodes(t_stack **a, t_stack **b)
 	cheapest_node = return_cheapest(*b);
 	if (cheapest_node->ab_median && cheapest_node->target_node->ab_median)
 		rotate_both(a, b, cheapest_node);
-	else if (!(cheapest_node->ab_median) &&
-        !(cheapest_node->target_node->ab_median))
+	else if (!(cheapest_node->ab_median)
+		&& !(cheapest_node->target_node->ab_median))
 		rev_rotate_both(a, b, cheapest_node);
 	finish_rotation(b, cheapest_node, 'b');
 	finish_rotation(a, cheapest_node->target_node, 'a');
@@ -64,31 +64,31 @@ void	finish_rotation(t_stack **stack, t_stack *top, char stack_name)
 	}
 }
 
-void    push_swap(t_stack **a, t_stack **b)
+void	push_swap(t_stack **a, t_stack **b)
 {
-    t_stack *smallest;
-    int     len_a;
+	t_stack	*smallest;
+	int		len_a;
 
-    len_a = stack_len(*a);
-    if (len_a == 5)
-        handle_five(a, b);
-    else
-    {
-        while (len_a-- > 3)
-            pb(b, a, false);
-    }
-    sorty(a);
-    while (*b)
-    {
-        init_nodes(*a, *b);
-        move_nodes(a, b);
-    }
-    set_current_position(*a);
-    smallest = is_smallest(*a);
-    if (smallest->ab_median)
-        while (*a != smallest)
-            ra(a, false);
-    else
-        while (*a != smallest)
-            rra(a, false);
+	len_a = stack_len(*a);
+	if (len_a == 5)
+		handle_five(a, b);
+	else
+	{
+		while (len_a-- > 3)
+			pb(b, a, false);
+	}
+	sorty(a);
+	while (*b)
+	{
+		init_nodes(*a, *b);
+		move_nodes(a, b);
+	}
+	set_current_position(*a);
+	smallest = is_smallest(*a);
+	if (smallest->ab_median)
+		while (*a != smallest)
+			ra(a, false);
+	else
+		while (*a != smallest)
+			rra(a, false);
 }

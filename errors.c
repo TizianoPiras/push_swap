@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 12:51:20 by ertiz             #+#    #+#             */
-/*   Updated: 2023/05/23 14:28:35 by ertiz            ###   ########.fr       */
+/*   Updated: 2023/05/23 15:41:23 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-//check if there is error on syntax or there are letters in the input string (not valid)
+//check if there is error on syntax or 
+//there are letters in the input string (not valid)
 
 int	error_syntax(char *str_nbr)
 {
@@ -55,8 +56,8 @@ int	error_syntax(char *str_nbr)
 	i = 0;
 	while (str_nbr[i])
 	{
-		if (str_nbr[i] != '-' &&
-			(str_nbr[i] < '0' || str_nbr[i] > '9'))
+		if (str_nbr[i] != '-'
+			&& (str_nbr[i] < '0' || str_nbr[i] > '9'))
 			return (1);
 		i++;
 	}
