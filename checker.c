@@ -6,12 +6,35 @@
 /*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:42:24 by tpiras            #+#    #+#             */
+<<<<<<< HEAD
+/*   Updated: 2023/05/28 15:25:40 by ertiz            ###   ########.fr       */
+=======
 /*   Updated: 2023/05/27 20:25:44 by ertiz            ###   ########.fr       */
+>>>>>>> cdaeffcf9f809763f29c629dddc3ea248c4c40f6
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "checker.h"
+
+void printStack(t_stack* stack) 
+{
+    int position = 1;
+    t_stack* current = stack;
+    while (current != NULL) {
+        printf("Position: %d, Value: %d\n", position, current->nbr);
+        current = current->next;
+        position++;
+    }
+}
+
+void	stamp(t_stack *stack)
+{
+	if (checking_stack(stack) == 1)
+		write (1, "OK\n", 3);
+	else
+		write (1, "KO\n", 3);
+}
 
 int	main(int ac, char **av)
 {
@@ -30,6 +53,8 @@ int	main(int ac, char **av)
 	}
 	if (ac > 2)
 		stack_init(&a, av + 1, 0);
+	printf("The stack a input is: \n");
+	printStack(a);
 	iterate(&a, &b, get_next_line(0));
 	free_stack(&a);
 	return (0);
@@ -52,6 +77,10 @@ void	iterate(t_stack **a, t_stack **b, char *str)
 		else
 			check_rotate(a, b, str);
 		free(str);
+		printf("after is: \n");
+		printStack(*a);
+		printf("and b is: \n");
+		printStack(*b);
 		str = get_next_line(0);
 	}
 	stamp(*a);
@@ -91,12 +120,4 @@ int	checking_stack(t_stack *stack)
 		i++;
 	}
 	return (0);
-}
-
-void	stamp(t_stack *stack)
-{
-	if (checking_stack(stack) == 1)
-		write (1, "OK\n", 3);
-	else
-		write (1, "KO\n", 3);
 }
