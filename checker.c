@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ertiz <ertiz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:42:24 by tpiras            #+#    #+#             */
-/*   Updated: 2023/05/23 17:53:52 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/05/27 20:25:44 by ertiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	iterate(t_stack **a, t_stack **b, char *str)
 		if (ft_strncmp(str, "pa", 2) == 0)
 			pa(a, b, true);
 		else if (ft_strncmp(str, "pb", 2) == 0)
-			pb(a, b, true);
+			pb(b, a, true);
 		else if (ft_strncmp(str, "sa", 2) == 0)
 			sa(a, true);
 		else if (ft_strncmp(str, "sb", 2) == 0)
@@ -71,6 +71,12 @@ void	check_rotate(t_stack **a, t_stack **b, char *str)
 		rrr(a, b, true);
 	else if (ft_strncmp(str, "rr", 2) == 0)
 		rr(a, b, true);
+	else
+	{
+		write(1, "Error: command not found\n", 25);
+		write(1, "Try with:\n pb, pa, sa, sb, ss, ra, rb, rr, rra, rrb, rrr.\n", 58);
+		//exit(2);
+	}
 }
 
 int	checking_stack(t_stack *stack)
@@ -80,11 +86,11 @@ int	checking_stack(t_stack *stack)
 	i = 0;
 	while (i < (stack_len(stack)))
 	{
-		if (stack->next->nbr < stack->nbr)
-			return (0);
+		if (stack->next->nbr > stack->nbr)
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 void	stamp(t_stack *stack)
